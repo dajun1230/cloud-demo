@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   application:
-    name: order-service
+    name: orderservice
   datasource:
     url: jdbc:mysql://localhost:3306/cloud_order?useSSL=false
     username: root
@@ -11,8 +11,8 @@ spring:
   cloud:
     nacos:
       server-addr: localhost:8848 # nacos服务地址
-      discovery:
-         cluster-name: HZ # 集群名称，这里HZ代指杭州
+#      discovery:
+#         cluster-name: HZ # 集群名称，这里HZ代指杭州
 userservice:
   ribbon:
     NFLoadBalancerRuleClassName: com.alibaba.cloud.nacos.ribbon.NacosRule # 负载均衡规则
@@ -21,3 +21,8 @@ mybatis:
   type-aliases-package: com.ycj.order.pojo
   configuration:
     map-underscore-to-camel-case: true
+#feign:
+#  client:
+#    config:
+#      default:
+#        loggerLevel: FULL
